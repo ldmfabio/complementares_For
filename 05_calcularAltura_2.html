@@ -9,16 +9,19 @@
 
     //ENTRADA
     let quantidadePessoas = parseInt(prompt("Quantas pessoas vao ter suas medidas informadas?"));
-    let Altura = [];
+    let menorAltura = 100;
+    let maiorAltura = 0;
 
     //PROCESSAMENTO
     for (let contador = 1; contador <= quantidadePessoas; contador++) {
         let alturaPessoa = Number(prompt(`Informe a altura da pessoa:`));
-        Altura.push(alturaPessoa);
+        if (alturaPessoa > maiorAltura) {
+            maiorAltura = alturaPessoa;
+        }
+        if (alturaPessoa < menorAltura) {
+            menorAltura = alturaPessoa;
+        }
     }
-    
-    let maiorAltura = Altura.sort((a,b) => b-a)[0];
-    let menorAltura = Altura.sort((a,b) => a-b)[0];
     
     //SAÍDA
     document.write(`A maior altura é ${maiorAltura}<br/>`);

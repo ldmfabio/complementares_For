@@ -11,11 +11,31 @@
     */
 
     //ENTRADA
+    let comprasParceladas = 0;
+    let quantComprasParceladas = 0;
+    let comprasAVista = 0;
+    let quantComprasAVista = 0;
 
+    const comprasRealizadas = parseInt(prompt(`Quantas compras foram realizadas?`));
 
     //PROCESSAMENTO
-
+    for (let contador = 1; contador <= comprasRealizadas; contador++) {
+        const tipoPagamento = prompt(`Compra realizada V-A Vista ou P-Parcelada?`).trim().toUpperCase();
+        switch (tipoPagamento) {
+            case "V":
+                comprasAVista = comprasAVista + Number(prompt(`Qual o valor da compra?`));
+                quantComprasAVista++; //quantComprasAVista = quantComprasAVista + 1;
+                break;        
+            case "P":
+                comprasParceladas = comprasParceladas + Number(prompt(`Qual o valor da compra`));
+                quantComprasParceladas++;
+                break;
+        }
+    }
     
     //SAÍDA
-
+    document.write(`O total de compras a vista é de R$ ${comprasAVista.toFixed(2)}</br>`);
+    document.write(`O total de compras parceladas é de R$ ${comprasParceladas.toFixed(2)}</br>`);
+    document.write(`O total de compras efetuadas é de R$ ${(comprasAVista + comprasParceladas).toFixed(2)}</br>`);
+    document.write(`A primeira prestação das compras parceladas é de R$ ${(comprasParceladas / 3).toFixed(2)}`);
 </script>

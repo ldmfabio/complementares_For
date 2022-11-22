@@ -16,10 +16,17 @@
 
     //ENTRADA
 
-
     //PROCESSAMENTO
+    const tomate = Number(prompt("Informe quantos kg vc quer de tomate:")) *3.9;
+    const batata = Number(prompt("Informe quantos kg vc quer de batata")) * 3.4;
+    const batataDoce = Number(prompt("Informe quantos kg vc quer de batata doce ")) * 4.7;
+    const alface = Number(prompt("Informe quantos unidades vc quer de alface ")) * 1.5;
+    const cebola = Number(prompt("Informe quantos kg vc quer de cebola ")) * 2.9;
+    const cebolinha = Number(prompt("Informe quantas unidades de cebolinha vc quer ")) * 1.4;
+    const beterraba = Number(prompt("Informe quantos kg vc quer de beterraba ")) * 4.1;
 
+    const soma = tomate + batata + batataDoce + alface + cebola + cebolinha + beterraba
     
-    //SAÍDA
-    
+ //SAÍDA
+    document.write(`Seu faturamento foi de: R$${soma}`)
 </script>

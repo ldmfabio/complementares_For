@@ -8,11 +8,20 @@
     */
 
     //ENTRADA
-
+    let notasProgramacaoI = [4, 3, 5, 10, 9, 2, 7, 10, 8, 7, 6, 1, 5, 2, 3];
 
     //PROCESSAMENTO
+    let somaNotas = 0;
+    for (let nota of notasProgramacaoI) {
+        somaNotas = somaNotas + nota;
+    }
 
-    
+    const mediaTurma = somaNotas / notasProgramacaoI.length;
+    const maiorMedia = notasProgramacaoI.sort((a, b) => b - a)[0];
+    const menorMedia = notasProgramacaoI.sort((a, b) => a - b)[0];
+
     //SAÍDA
-    
+    document.write(`A maior média é ${maiorMedia.toFixed(2)}!`);
+    document.write(`A menor média é ${menorMedia.toFixed(2)}!`);
+    document.write(`A média da turma é ${mediaTurma.toFixed(2)}!`);
 </script>

@@ -13,11 +13,15 @@
     */
 
     //ENTRADA
-
+    const numeroTabuada = parseInt(prompt(`Qual número deseja calcular a tabuada?`));
+    const inicio = parseInt(prompt(`Qual o início da tabuada para o número ${numeroTabuada}?`));
+    const fim = parseInt(prompt(`Qual o fim da tabuada para o número ${numeroTabuada}, que iniciará em ${inicio}?`));
 
     //PROCESSAMENTO
+    for (let contador = inicio; contador <= fim; contador++) {
+        document.write(`${numeroTabuada} x ${contador} = ${(numeroTabuada * contador)}<br/>`);
+    }
 
-    
     //SAÍDA
 
 </script>

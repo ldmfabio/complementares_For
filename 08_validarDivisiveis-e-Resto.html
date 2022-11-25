@@ -8,8 +8,17 @@
 
 
     //PROCESSAMENTO
-
+    let listaDeNumeros = [];
+    let demaisNumeros = [];
+    for (let contador = 1000; contador <= 1999; contador++) {
+        if (contador % 11 === 5) {
+            listaDeNumeros.push(contador);
+        }
+        else {
+            demaisNumeros.push(contador);
+        }
+    }
     
     //SAÍDA
-    
+    document.write(listaDeNumeros.join(", "));
 </script>

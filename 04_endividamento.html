@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
-
+    let conta = 10000;
+    let meses = 0;
 
     //PROCESSAMENTO
-
+    for (meses = 0; 300 < conta; meses++) {
+        // conta = conta - 300;
+        // conta = conta * 1.03;
+        // conta = (conta - 300) * 1.03;
+        conta = conta - 300;
+        conta = conta + (conta * 0.03);
+    }
     
     //SAÍDA
-    
+    document.write(`O valor de R$ 10.000,00 será gasto em ${meses} meses!`);
 </script>

@@ -9,8 +9,14 @@
 
 
     //PROCESSAMENTO
+    let numerosPares = 0;
+    let numerosImpares = 0;
+    for (let contador = 1; contador <= 100; contador++) {
+        if (contador % 2 === 0) numerosPares = numerosPares + contador;
+        else numerosImpares = numerosImpares + contador;
+    }
 
-    
     //SAÍDA
-    
+    document.write(`A somatória de números pares é de ${numerosPares}.<br/>`);
+    document.write(`A somatória de números ímpares é de ${numerosImpares}.<br/>`);
 </script>

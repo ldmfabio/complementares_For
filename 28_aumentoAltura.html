@@ -6,12 +6,16 @@
     Apresente o resultado na tela.
     */
 
-    //ENTRADA
-
-
     //PROCESSAMENTO
+    let alturaJoaozinho = 1.5;
+    let alturaZezinho = 1.3;
 
-    
+    let anos = 1;
+    for (anos = 1; alturaZezinho <= alturaJoaozinho; anos++) {
+        alturaZezinho = alturaZezinho + 0.03;
+        alturaJoaozinho = alturaJoaozinho + 0.02;
+    }
+
     //SAÍDA
-
+    document.write(`Serão necessários ${anos} anos para a altura de Zezinho superar a altura de Joaozinho!`);
 </script>

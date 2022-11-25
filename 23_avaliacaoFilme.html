@@ -11,11 +11,27 @@
     */
 
     //ENTRADA
-
+    const numeroPessoas = parseInt(prompt(`Quantas pessoas avaliarão o filme?`));
 
     //PROCESSAMENTO
+    let pessoasFilmeBom = 0;
+    let pessoasFilmeRegular = 0;
+    let idadeFilmeBom = 0;
+    let idadeFilmeRegular = 0;
+    let idadeGeral = 0;
 
-    
+    for (let contador = 1; contador <= numeroPessoas; contador++) {
+        let idade = parseInt(prompt(`Qual a sua idade?`));
+        let avaliacao = prompt(`Você considera o filme (B)Bom ou (R)Regular?`).trim().toUpperCase();
+    }
+
+    let percentualBom = pessoasFilmeBom / numeroPessoas * 100;
+    let percentualRegular = 100 - percentualBom;
+
     //SAÍDA
-
+    document.write(`Média de idade das pessoas que avaliaram o filme como REGULAR: ${(idadeFilmeRegular / pessoasFilmeRegular).toFixed(1)}.<br/>`);
+    document.write(`Média de idade das pessoas que avaliaram o filme como BOM: ${(idadeFilmeBom / pessoasFilmeBom).toFixed(1)}.<br/>`);
+    document.write(`Média de idade de todas as pessoas que avaliaram o filme: ${(idadeGeral / numeroPessoas).toFixed(1)}.<br/>`);
+    document.write(`Percentual de pessoas que avaliaram o filme como REGULAR: ${percentualRegular.toFixed(2)}.<br/>`);
+    document.write(`Percentual de pessoas que avaliaram o filme como BOM: ${percentualBom.toFixed(2)}.<br/>`);
 </script>

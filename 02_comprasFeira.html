@@ -15,11 +15,17 @@
     */
 
     //ENTRADA
-
+    const tomate = Number(prompt(`Quantidade vendida de tomate (Kg):`) * 3.9);
+    const batata = Number(prompt(`Quantidade vendida de batata (Kg)`) * 3.4);
+    const batataDoce = Number(prompt(`Quantidade vendida de batata-doce (Kg)`) * 4.7);
+    const alface = Number(prompt(`Quantidade vendida de alface (Kg)`) * 1.5);
+    const cebola = Number(prompt(`Quantidade vendida de cebola (Kg)`) * 2.9);
+    const cebolinha = Number(prompt(`Quantidade vendida de cebolinha (Kg)`) * 1.4);
+    const beterraba = Number(prompt(`Quantidade vendida de beterraba (Kg)`) * 4.1);
 
     //PROCESSAMENTO
+    const totalCompra = tomate + batata + batataDoce + alface + cebola + cebolinha + beterraba;
 
-    
     //SAÍDA
-    
+    document.write(`O faturamento do feirante foi de R$ ${totalCompra.toFixed(2)}`);
 </script>

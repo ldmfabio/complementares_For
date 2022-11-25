@@ -8,11 +8,16 @@
     */
 
     //ENTRADA
-
+    const numeroPessoas = parseInt(prompt(`Quantas pessoas terão a sua medida informada?`));
 
     //PROCESSAMENTO
+    let alturas = [];
+    for (let contador = 1; contador <= numeroPessoas; contador++) {
+        alturas.push(Number(prompt(`Qual a altura da pessoa ${contador} de ${numeroPessoas}?`).replace(",", ".")));
+    }
+    const maiorAltura = alturas.sort((a, b) => b - a)[0];
+    const menorAltura = alturas.sort((a, b) => a - b)[0];
 
-    
     //SAÍDA
-    
+    document.write(`A maior altura é de ${maiorAltura.toFixed(2)} e a menor altura é de ${menorAltura.toFixed(2)}!`);
 </script>

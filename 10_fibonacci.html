@@ -8,11 +8,17 @@
     */
 
     //ENTRADA
-
+    let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+    const adicionar = parseInt(prompt(`Quantos números deseja adicionar na sequência de Fibonacci ${fibonacci.join(", ")}?`));
 
     //PROCESSAMENTO
+    for (let contador = 1; contador <= adicionar; contador++) {
+        const penultimaPosicao = fibonacci[fibonacci.length - 2];
+        const ultimaPosicao = fibonacci[fibonacci.length - 1];
+        const somatoria = penultimaPosicao + ultimaPosicao;
+        fibonacci.push(somatoria);
+    }
 
-    
     //SAÍDA
-    
+    document.write(`A sequência de fibonacci final é de ${fibonacci.join(", ")}`);
 </script>

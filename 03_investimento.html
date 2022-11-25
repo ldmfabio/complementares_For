@@ -8,11 +8,37 @@
     */
 
     //ENTRADA
-
+    let valorInvestido = 0;
+    let valorInvestido24meses = 0;
+    let valorInvestido48meses = 0;
+    let valorInvestido96meses = 0;
+    let rendimento24meses = 0;
+    let rendimento48meses = 0;
+    let rendimento96meses = 0;
 
     //PROCESSAMENTO
+    for (let meses = 1; meses <= 96; meses++) {
+        valorInvestido = valorInvestido + 100;
+        valorInvestido = valorInvestido * 1.018;
+        if (meses === 24) {
+            valorInvestido24meses = valorInvestido;
+            rendimento24meses = valorInvestido - 2400;
+        }
+        if (meses === 48) {
+            valorInvestido48meses = valorInvestido;
+            rendimento48meses = valorInvestido - 4800 - rendimento24meses;
+        }
+        if (meses === 96) {
+            valorInvestido96meses = valorInvestido;
+            rendimento96meses = valorInvestido - 9600 - rendimento24meses - rendimento48meses;
+        }
+    }
 
-    
     //SAÍDA
-    
+    document.write(`Ao final de 24 meses, o valor investido será de R$ ${valorInvestido24meses.toFixed(2)}<br/>`);
+    document.write(`O rendimento do investimento após os 24 meses será de R$ ${rendimento24meses.toFixed(2)}<br/>`);
+    document.write(`Ao final de 48 meses, o valor investido será de R$ ${valorInvestido48meses.toFixed(2)}<br/>`);
+    document.write(`O rendimento do investimento após os 48 meses será de R$ ${rendimento48meses.toFixed(2)}<br/>`);
+    document.write(`Ao final de 96 meses, o valor investido será de R$ ${valorInvestido96meses.toFixed(2)}<br/>`);
+    document.write(`O rendimento do investimento após os 96 meses será de R$ ${rendimento96meses.toFixed(2)}<br/>`);
 </script>

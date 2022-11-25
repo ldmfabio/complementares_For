@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA
     /*
@@ -7,11 +8,27 @@
     */
 
     //ENTRADA
+    const quantidadePrimos = parseInt(prompt(`Quantos números primos deseja descobrir?`));
 
+    function validaPrimo(numero) {
+        let divisivel = 0;
+        for (let n = 1; n <= numero; n++) {
+            if (numero % n === 0) {
+                divisivel++;
+            }
+        }
+        if (divisivel > 2) return false;
+        else return true;
+    }
 
     //PROCESSAMENTO
+    let listaPrimos = [];
+    for (let contador = 1; listaPrimos.length < quantidadePrimos; contador++) {
+        if (validaPrimo(contador)) {
+            listaPrimos.push(contador);
+        }
+    }
 
-    
     //SAÍDA
-
+    document.write(`A lista de números primos desejada contém os números ${listaPrimos.join(", ")}.`);
 </script>

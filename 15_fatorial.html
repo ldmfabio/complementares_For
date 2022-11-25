@@ -7,11 +7,20 @@
     */
 
     //ENTRADA
-
+    const numero = parseInt(prompt(`Informe um número inteiro e positivo:`));
 
     //PROCESSAMENTO
+    if ((numero > 0) && (numero % 1 === 0)) {
+        let fatorial = 1;
+        for (let n = 1; n <= numero; n++) {
+            fatorial = fatorial * n;
+        }
+        document.write(`O fatorial de ${numero} é ${fatorial}.`);
+    }
+    else {
+        document.write(`Forneça um número INTEIRO e POSITIVO!`);
+    }
 
-    
     //SAÍDA
 
 </script>

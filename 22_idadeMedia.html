@@ -9,11 +9,32 @@
     */
 
     //ENTRADA
-
+    let geral = [];
+    let homens = [];
+    let mulheres = [];
+    let homensMedia = 0;
+    let mulheresMedia = 0;
+    let geralMedia = 0;
 
     //PROCESSAMENTO
+    for (let i = 1; i <= 10; i++) {
+        let idade = parseInt(prompt("informe a idade"));
+        geral.push(idade)
+        let genero = prompt("Informe o gênero (M-masculino | F-Feminino)").toUpperCase();
+        if (genero === "M") {
+            homens.push(idade)
+            homensMedia = homensMedia + idade;
+        }
+        else if (genero === "F") {
+            mulheres.push(idade)
+            mulheresMedia = mulheresMedia + idade;
+        }
+        geralMedia = geralMedia + idade;
+    }
+    geralMedia = geralMedia / geral.length
+    homensMedia = homensMedia / homens.length
+    mulheresMedia = mulheresMedia / mulheres.length
 
-    
     //SAÍDA
-
+    document.write(`Média de idade das 10 pessoas: ${geralMedia.toFixed(2)}</br>Média de idade dos homens: ${homensMedia.toFixed(2)} </br>Média de idade das mulheres: ${mulheresMedia.toFixed(2)}`)
 </script>

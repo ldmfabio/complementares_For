@@ -9,11 +9,21 @@
     */
 
     //ENTRADA
-
+    const investimentoInicial = Number(prompt(`Informe a quantia que deseja investir:`).trim().replace(", ", "."));
+    let poupanca = investimentoInicial;
+    let poupancaPlus = investimentoInicial;
+    let fundosRendaFixa = investimentoInicial;
 
     //PROCESSAMENTO
+    for (let contador = 1; contador <= 36; contador++) {
+        poupanca = poupanca + (poupanca * 0.015);
+        poupancaPlus = poupancaPlus + (poupancaPlus * 0.02);
+        fundosRendaFixa = fundosRendaFixa + (fundosRendaFixa * 0.04);
+    }
 
-    
     //SAÍDA
-
+    document.write(`Ao final do período previsto (3 anos - 36 meses), o valor inicial investido (R$ ${investimentoInicial.toFixed(2)}) será, respectivamente, de:<br/>`);
+    document.write(`<li>Poupança: ${poupanca.toFixed(2)}</li><br/>`);
+    document.write(`<li>Poupança Plus: ${poupancaPlus.toFixed(2)}</li><br/>`);
+    document.write(`<li>Fundos de renda fixa: ${fundosRendaFixa.toFixed(2)}</li><br/>`);
 </script>

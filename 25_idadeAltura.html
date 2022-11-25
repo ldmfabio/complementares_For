@@ -12,8 +12,28 @@
 
 
     //PROCESSAMENTO
+    let pesoTotal = 0;
+    let pesoAbaixo25Anos = 0;
+    let pesoAcima50Anos = 0;
+    let pessoasAcima50Anos = 0;
+    let pessoasAbaixo25Anos = 0;
 
-    
+    for (let contador = 1; contador <= 10; contador++) {
+        const idade = parseInt(prompt(`Informe a sua idade:`).trim());
+        pesoTotal = pesoTotal + Number(prompt(`Informe o seu peso:`).replace(",", ".").trim());
+
+        if (idade >= 50) {
+            pessoasAcima50Anos++;
+            pesoAcima50Anos += peso;
+        }
+        else if (idade < 25) {
+            pesoAbaixo25Anos++;
+            pesoAbaixo25Anos += peso;
+        }
+    }
+
     //SAÍDA
-
+    document.write(`A média do peso das pessoas acima de 50 anos é de ${(pesoAcima50Anos / pessoasAcima50Anos).toFixed(2)}.<br/>`);
+    document.write(`A média do peso das pessoas abaixo de 25 anos é de ${(pesoAbaixo25Anos / pessoasAbaixo25Anos).toFixed(2)}.<br/>`);
+    document.write(`A média do peso de todas as pessoas é de ${(pesoTotal / 10).toFixed(2)}.`);
 </script>

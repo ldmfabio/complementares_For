@@ -11,11 +11,20 @@
     */
 
     //ENTRADA
-
+    const limiteInferior = parseInt(prompt(`Informe um número INTEIRO e POSITIVO para o LIMITE INFERIOR:`).trim());
+    const limiteSuperior = parseInt(prompt(`Informe um número INTEIRO e POSITIVO para o LIMITE SUPERIOR:`).trim());
 
     //PROCESSAMENTO
+    let listaDeNumeros = [];
+    let soma = 0;
+    for (let contador = limiteInferior; contador <= limiteSuperior; contador++) {
+        if (contador % 2 === 0) {
+            soma = soma + contador;
+            listaDeNumeros.push(contador);
+        }
+    }
 
-    
     //SAÍDA
-
+    document.write(`Os números pares no intervalo entre ${limiteInferior} e ${limiteSuperior} são: ${listaDeNumeros.join(", ")}.<br/>`);
+    document.write(`A soma desses números é: ${soma}.`);
 </script>

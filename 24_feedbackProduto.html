@@ -14,8 +14,31 @@
 
 
     //PROCESSAMENTO
+    let pessoasAtendeu = 0;
+    let pessoasNaoAtendeu = 0;
+    let mulheresAtendeu = 0;
+    let homensNaoAtendeu = 0;
+    let homens = 0;
+    let mulheres = 0;
 
-    
+    for (let contador = 1; contador <= 10; contador++) {
+        const genero = prompt(`Informe se você é (H)Homem ou (M)Mulher):`).trim().toUpperCase();
+        const opiniao = prompt(`O produto atendeu suas expectativas? (S-Sim | N-Não)`).trim().toUpperCase();
+        if (opiniao === "S") {
+            pessoasAtendeu++;
+            if (genero === "M") mulheresAtendeu++;
+        }
+        else {
+            pessoasNaoAtendeu++;
+            if (genero === "H") homensNaoAtendeu++;
+        }
+        if (genero === "M") mulheres++;
+        else homens++;
+    }
+
     //SAÍDA
-
+    document.write(`Pessoas SATISFEITAS com o produto: ${pessoasAtendeu}.<br/>`);
+    document.write(`Pessoas INSATISFEITAS com o produto: ${pessoasNaoAtendeu}.<br/>`);
+    document.write(`Mulheres SATISFEITAS com o produto: ${mulheresAtendeu}.<br/>`);
+    document.write(`Percentual de homens INSATISFEITOS com o produto: ${(homensNaoAtendeu / homens * 100).toFixed(2)}.`);
 </script>

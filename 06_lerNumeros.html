@@ -8,11 +8,19 @@
     */
 
     //ENTRADA
-
+    let listaDeNumeros = [4, 8, 12, 35, 78, 83, 5, 22, 49, 95];
 
     //PROCESSAMENTO
+    let abaixo50 = [];
+    let acima50 = [];
+    for (let numero of listaDeNumeros) {
+        if (numero < 50) abaixo50.push(numero)
+        else acima50.push(numero);
+    }
+    const percAbaixo50 = (abaixo50 / listaDeNumeros.length) * 100;
+    const percAcima50 = 100 - percAbaixo50;
 
-    
     //SAÍDA
-    
+    document.write(`Os números acima de 50 são ${acima50.join(", ")} - Totalizam ${percAcima50.toFixed(2)}</br>`);
+    document.write(`Os números abaixo de 50 são ${abaixo50.join(", ")} - Totalizam ${percAbaixo50.toFixed(2)}</br>`);
 </script>

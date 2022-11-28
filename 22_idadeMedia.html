@@ -9,32 +9,30 @@
     */
 
     //ENTRADA
-    let geral = [];
-    let homens = [];
-    let mulheres = [];
-    let homensMedia = 0;
-    let mulheresMedia = 0;
-    let geralMedia = 0;
+    let idadeGeral = 0;
+    let quantMulheres = 0;
+    let quantHomens = 0;
+    let idadeHomens = 0;
+    let idadeMulheres = 0;
 
     //PROCESSAMENTO
     for (let i = 1; i <= 10; i++) {
-        let idade = parseInt(prompt("informe a idade"));
-        geral.push(idade)
-        let genero = prompt("Informe o gênero (M-masculino | F-Feminino)").toUpperCase();
-        if (genero === "M") {
-            homens.push(idade)
-            homensMedia = homensMedia + idade;
+        let genero = prompt(`Informe o gênero da pessoa ${i} de 10 (F-Feminino | M-Masculino):`).toUpperCase().trim();
+        let idade = parseInt(prompt(`Informe a idade da pessoa ${i} de 10:`).trim());
+
+        idadeGeral = idadeGeral + idade;
+        if (genero === "F") {
+            quantMulheres++;
+            idadeMulheres = idadeMulheres + idade;
         }
-        else if (genero === "F") {
-            mulheres.push(idade)
-            mulheresMedia = mulheresMedia + idade;
+        else {
+            quantHomens++;
+            idadeHomens = idadeHomens + idade;
         }
-        geralMedia = geralMedia + idade;
     }
-    geralMedia = geralMedia / geral.length
-    homensMedia = homensMedia / homens.length
-    mulheresMedia = mulheresMedia / mulheres.length
 
     //SAÍDA
-    document.write(`Média de idade das 10 pessoas: ${geralMedia.toFixed(2)}</br>Média de idade dos homens: ${homensMedia.toFixed(2)} </br>Média de idade das mulheres: ${mulheresMedia.toFixed(2)}`)
+    document.write(`A média de idade das 10 pessoas é de ${(idadeGeral / 10).toFixed(1)}<br/>`);
+    document.write(`A média de idade das ${quantMulheres} mulheres é de ${(idadeMulheres / quantMulheres).toFixed(1)}<br/>`);
+    document.write(`A média de idade dos ${quantHomens} homens é de ${(idadeHomens / quantHomens).toFixed(1)}`);
 </script>

@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA
     /*
@@ -5,17 +6,17 @@
     */
 
     //ENTRADA
-
+    let quintoNumero = 0;
+    let encontrouNumero = 0;
 
     //PROCESSAMENTO
-    let encontrouNumero = 0;
-    let quintoNumero = 0;
-
-    for (let numero = 1001; encontrouNumero < 5; numero++) {
-        if (numero % 11 === 5) {
+    for (let i = 1001; encontrouNumero < 5; i++) {
+        if (i % 11 === 5) {
             encontrouNumero++;
         }
-        if (encontrouNumero === 5) quintoNumero = numero;
+        if (encontrouNumero === 5) {
+            quintoNumero = i;
+        }
     }
 
     //SAÍDA
